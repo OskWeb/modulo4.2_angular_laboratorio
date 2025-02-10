@@ -1,0 +1,51 @@
+<div class="formPage">
+  <form [formGroup]="myForm" (submit)="login()" class="loginForm">
+    <div class="inputBox">
+      <label for="username">Username</label>
+      <input
+        id="username"
+        type="text"
+        placeholder="username"
+        formControlName="username"
+      />
+      @if (myForm.controls.username.invalid && (myForm.controls.username.touched
+      || myForm.controls.username.dirty)) {
+      @if(myForm.controls.username.errors?.['required']) {
+      <small class="invalid-feedback">El username es obligatorio</small>
+      } @if(myForm.controls.username.errors?.['minlength']) {
+      <small class="invalid-feedback"
+        >El username debe de tener al menos 3 caracteres</small
+      >
+      } @if(myForm.controls.username.errors?.['maxlength']) {
+      <small class="invalid-feedback"
+        >El username debe de tener un máximo de 20 caracteres</small
+      >
+      } }
+    </div>
+
+    <div class="inputBox">
+      <label for="password" id="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        placeholder="password"
+        formControlName="password"
+      />
+      @if (myForm.controls.password.invalid && (myForm.controls.password.touched
+      || myForm.controls.password.dirty)) {
+      @if(myForm.controls.password.errors?.['required']) {
+      <small class="invalid-feedback">El username es obligatorio</small>
+      } @if(myForm.controls.password.errors?.['minlength']) {
+      <small class="invalid-feedback"
+        >La contraseña debe de tener al menos 8 caracteres</small
+      >
+      } @if(myForm.controls.password.errors?.['maxlength']) {
+      <small class="invalid-feedback"
+        >La contraseña debe de tener un máximo de 16 caracteres</small
+      >
+      } }
+    </div>
+
+    <button type="submit" class="loginButton">Login</button>
+  </form>
+</div>

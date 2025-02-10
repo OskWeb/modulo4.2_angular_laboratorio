@@ -1,0 +1,36 @@
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  gap: 10px;
+  margin: 50px;
+}
+.loginForm .inputBox {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+}
+.loginForm .inputBox label {
+  margin-bottom: 5px;
+}
+
+.loginForm input {
+  padding: 10px;
+}
+.loginForm .loginButton {
+  width: 120px;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  background-color: black;
+  border-radius: 3px;
+  border: none;
+  color: white;
+}
+.invalid-feedback {
+  background-color: red;
+  border-radius: 3px;
+  color: white;
+  padding: 5px;
+  margin-top: 10px;
+}

@@ -1,0 +1,25 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+  padding: 0px 50px 0px 50px;
+  background-color: rgb(230, 255, 255);
+}
+header .left-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+header .left-content img {
+  width: 50px;
+}
+header .right-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+header .right-content .user-logout {
+  display: flex;
+  gap: 20px;
+}
