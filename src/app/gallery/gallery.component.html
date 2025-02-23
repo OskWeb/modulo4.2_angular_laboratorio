@@ -1,1 +1,75 @@
-<p>gallery works!</p>
+<h1 class="title">Galería</h1>
+
+<div class="gallery">
+  <div class="seleted_image">
+    <img
+      #selected
+      src="/assets/gallery/image_{{ selectedImage }}.jpg"
+      alt=""
+      rotate="0"
+      step="10"
+    />
+  </div>
+  <div class="gallery_images">
+    <div
+      *ngFor="let image of gallery | slice : pipeStart : pipeEnd"
+      class="imageBox"
+      (click)="changeImage(image.id)"
+    >
+      <img
+        id="{{ image.photo_id }}"
+        src="{{ image.photo_path }}"
+        alt="{{ image.photo_title }}"
+        title="{{ image.photo_title }}"
+        [ngClass]="selectedImage == image.id ? 'listSelectedImage' : ''"
+      />
+    </div>
+  </div>
+
+  <div class="buttons_options">
+    <button
+      (click)="previousPage()"
+      [disabled]="pipeStart == 0"
+      [ngClass]="pipeStart == 0 ? 'disabled' : 'previousPage'"
+    >
+      Página anterior
+    </button>
+    <button
+      [ngClass]="selectedImage == 1 ? 'disabled' : 'previous'"
+      (click)="previousImage()"
+      [disabled]="selectedImage == 1"
+    >
+      anterior
+    </button>
+    <button
+      [ngClass]="selectedImage == gallery.length ? 'disabled' : 'next'"
+      (click)="nextImage()"
+      [disabled]="selectedImage == gallery.length"
+    >
+      siguiente
+    </button>
+    <button
+      (click)="increaseImage()"
+      [ngClass]="imageWidth == 760 ? 'disabled' : 'increase'"
+      [disabled]="imageWidth == 760"
+    >
+      aumentar
+    </button>
+    <button
+      (click)="decreaseImage()"
+      [ngClass]="imageWidth == 440 ? 'disabled' : 'decrease'"
+      [disabled]="imageWidth == 440"
+    >
+      disminuir
+    </button>
+    <button class="play" *ngIf="!playing" (click)="play()">play</button>
+    <button class="stop" *ngIf="playing" (click)="stop()">stop</button>
+    <button
+      (click)="nextPage()"
+      [disabled]="pipeEnd >= gallery.length"
+      [ngClass]="pipeEnd >= gallery.length ? 'disabled' : 'nextPage'"
+    >
+      Página siguiente
+    </button>
+  </div>
+</div>
