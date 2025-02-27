@@ -18,6 +18,9 @@ export class LoginComponent {
     private fb: FormBuilder
   ) {}
 
+  loginValid = false;
+  formSend = false;
+
   myForm = this.fb.group({
     username: this.fb.control('', {
       validators: [
@@ -36,15 +39,19 @@ export class LoginComponent {
   });
 
   login() {
-    if (this.myForm.errors == null) {
+    this.myForm.markAllAsTouched();
+    if (this.myForm.errors == null && this.myForm.valid) {
       const loginState = this.authService.login(
         this.myForm.value.username ?? '',
         this.myForm.value.password ?? ''
       );
-
+      this.formSend = true;
       if (loginState) {
         console.log('Login realizado con exito!!');
         this.router.navigate(['/dashboard']);
+        this.loginValid = true;
+      } else {
+        this.loginValid = false;
       }
     }
   }

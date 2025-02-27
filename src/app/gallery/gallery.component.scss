@@ -62,4 +62,24 @@
   }
 }
 
+@media(max-width: 600px) {
+
+  .title {
+    text-align: center;
+    margin: 20px 0px 20px 0px;
+  }
+  .gallery {
+    .seleted_image {
+      img {
+        width: 100%;
+      }
+    }
+    .buttons_options {
+      margin: 20px;
+      flex-wrap: wrap;
+    }
+
+  }
+}
+
 

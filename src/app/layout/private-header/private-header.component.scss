@@ -22,4 +22,34 @@ header .right-content {
 header .right-content .user-logout {
   display: flex;
   gap: 20px;
+  align-items: center;
+}
+.logoutButton {
+  background-color: transparent;
+  color: black;
+  border: none;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+@media(max-width: 750px) {
+  .title {
+    display: none;
+  }
+  .userName {
+    display: none;
+  }
+  .right-content {
+    gap: 10px;
+  }
+}
+@media(max-width: 600px) {
+  header {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+
 }
