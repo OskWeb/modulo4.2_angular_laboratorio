@@ -20,6 +20,8 @@ export class LoginComponent {
 
   loginValid = false;
   formSend = false;
+  userNameHelp = 'master@lemoncode.net';
+  passwordHelp = '12345678';
 
   myForm = this.fb.group({
     username: this.fb.control('', {

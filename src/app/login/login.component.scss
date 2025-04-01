@@ -42,6 +42,10 @@
 .invalidCredentialsMessage svg {
   width: 20px;
 }
+.loginHelp {
+  display: flex;
+  flex-direction: column;
+}
 
 @media(max-width: 600px) {
   .formPage {

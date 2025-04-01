@@ -1,5 +1,13 @@
 <div class="formPage">
   <form [formGroup]="myForm" (submit)="login()" class="loginForm">
+    <div class="loginHelp">
+      <span
+        >Usuario: <b>{{ userNameHelp }}</b></span
+      >
+      <span
+        >Password: <b>{{ passwordHelp }}</b></span
+      >
+    </div>
     <div class="inputBox">
       <label for="username">Username</label>
       <input

@@ -5,7 +5,6 @@ import { AboutComponent } from './about/about.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { RouteNotFoundComponent } from './route-not-found/route-not-found.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
 import { CrudComponent } from './crud/crud.component';
 import { ProfileComponent } from './profile/profile.component';
 import { authGuard } from './authGuard/auth.guard';
